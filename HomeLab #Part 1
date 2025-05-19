@@ -1,0 +1,84 @@
+# 🧪 Linux Lab Report: User, Group, and SSH Access Management
+
+## 1. What I Learned
+
+- How to **create users and groups** in Linux.
+- How to **assign users to groups**.
+- How to **set passwords** and grant **sudo access**.
+- How to **restrict SSH access** to specific users via `/etc/ssh/sshd_config`.
+- How to troubleshoot SSH access issues by restarting services and monitoring logs.
+
+---
+
+## 2. Questions I Had
+
+- How do I **safely edit SSH access** without locking myself out?
+- What’s the correct **syntax in `sshd_config`** for allowing or denying specific users?
+- How do I **restart the SSH service** and make sure changes are live?
+
+---
+
+## 3. How Things Connected
+
+- `/etc/passwd` and `/etc/group` hold the system's user and group records.
+- SSH uses `/etc/ssh/sshd_config` to determine **who can log in** remotely.
+- Restarting SSH with `systemctl restart sshd` is **critical** after modifying config files.
+- Logs in `/var/log/secure` show **login attempts and errors**, which helped validate changes.
+
+---
+
+## 4. What I Tried / Commands Used
+
+ # Step 1. Create group and user
+
+COMMAND(for group): sudo groupadd devops_team
+COMMAND(for user): sudo useradd -m -G devops_team devops_user
+
+# Step 2. Set password for the new user
+
+COMMAND: sudo passwd devops_user
+
+# Step 3. Grant sudo access (method depends on distro, assuming CentOS/RHEL)
+
+COMMAND: sudo usermod -aG wheel devops_user
+
+# Step 4. Restrict SSH access in sshd_config
+
+COMMAND: sudo nano /etc/ssh/sshd_config
+
+# Add or modify:
+
+AllowUsers your_admin_user devops_user
+
+# Step 5. Restart SSH service
+
+COMMAND: sudo systemctl restart sshd
+
+# Step 6. Verfied if it worked
+
+COMMAND: sudo tail -f /var/log/secure 
+
+## 5. Where I got stuck: SSH Access Restricitons
+
+# The Problem: 
+
+- I didn't know where or how to allow SSH access for specific users. I was unsure what to add or change in /etc/ssh/sshd_config
+
+# How I Fixed it: 
+
+- Using the command on step 4 to gain access
+
+- COMMAND: AllowUsers your_admin_user devops_user
+
+- Saved, Exit & Excute command: CTRL + O -> ENTER -> CTRL + X
+
+## 6. Real-World Application/Use Case 
+
+- Managing access control, enforcing least privilege, and auditing logins are key for securing servers. 
+
+- You'll often need to automate user creation, SSH Rules, & group policies in production systems or Sys Admin/DevOps pipelines.
+
+- This skill is useful in cloud environments, especially when setting up bastion hosts, jump servers, and identity-based access. 
+
+
+

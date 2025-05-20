@@ -1,0 +1,46 @@
+#   Homelab Task: File & Directory Permissions
+
+## 1. What I Learned
+- How to set file permissions using `chmod` for owner, group, and others.
+- How to verify permissions using `ls -l` and `stat`.
+- Difference between numeric (`chmod 640`) and symbolic (`chmod o-rwx`) permission settings.
+
+## 2. Questions I Had
+- How do I remove read permissions from "others" without affecting owner and group?
+- What’s the difference between setting permissions with numbers vs letters?
+
+## 3. How Things Connected
+- The `chmod` command connected to what I learned earlier about file permissions (`rwx`) and user categories (owner, group, others).
+- Reinforced that `ls -l` is critical for verifying permissions visually.
+
+## 4. What I Needed to Try Next
+- Practice more symbolic vs numeric permissions.
+- Create nested files and test `chmod` in bulk.
+- Test out permission effects by switching users (via `su` or `sudo -u`).
+
+## 5. Real-World Application / Use Case
+- Controlling access to files in collaborative environments (e.g., a shared project folder for DevOps teams).
+- Preventing unauthorized access to sensitive files.
+- Prepping scripts or tools to set permissions automatically in deployments.
+
+---
+
+###   Commands Used
+
+```bash
+# Step 1: Create directory and file
+mkdir ~/devops_workspace
+touch ~/devops_workspace/project_notes.txt
+
+# Step 2: Check initial permissions
+ls -l ~/devops_workspace
+
+# Step 3: Set permissions - owner: rw, group: r, others: none
+chmod 640 ~/devops_workspace/project_notes.txt
+
+# Step 4: Adjust "others" manually (if needed)
+chmod o-rwx ~/devops_workspace/project_notes.txt
+
+# Step 5: Verify final permissions
+ls -l ~/devops_workspace/project_notes.txt
+stat ~/devops_workspace/project_notes.txt

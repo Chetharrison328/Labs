@@ -8,7 +8,7 @@
   - **Desktop Experience**
 - Server Core crashed the first time with an error ("Operating system not found").
   - Reinstalling worked the second time and installed faster than Desktop.
-- Had to change the admin password in the terminal during first login.
+- Had to change the admin password in the terminal during the first login.
 - Desktop Experience gave me no issues when installing. 
 - Noted that:
   - **Server Core** has a terminal-only interface with numbered options (e.g., #7 shows Remote Desktop status).

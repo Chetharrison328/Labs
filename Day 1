@@ -1,0 +1,74 @@
+#   Windows Server 2022 - Mini Labs (1–4)
+
+##   What I Learned
+
+### Lab 1: Clean Install + VM Creation (Server Core vs. Desktop Experience)
+- Learned how to create and clean install VMs using both:
+  - **Server Core**
+  - **Desktop Experience**
+- Server Core crashed the first time with an error ("Operating system not found").
+  - Reinstalling worked the second time and installed faster than Desktop.
+- Had to change the admin password in the terminal during first login.
+- Desktop Experience gave me no issues when installing. 
+- Noted that:
+  - **Server Core** has a terminal-only interface with numbered options (e.g., #7 shows Remote Desktop status).
+  - **Desktop Experience** offers a clean Windows GUI.
+- Struggled with understanding the real-world use cases and benefits of Core vs. Desktop installs.
+
+---
+
+### Lab 2: VM Settings (System, Network, Processor)
+- Modified VM settings:
+  - System memory
+  - Number of processors
+  - Network adapter
+- Restarted VM and booted successfully.
+- Observed no issues during boot.
+- Verified VM had internet access.
+- Didn't struggle with this lab — wanted to see how changes affected boot behavior.
+
+---
+
+### Lab 3: Clean Install vs. In-Place Upgrade
+- Revisited clean install steps.
+- Saved in-place upgrade for later hands-on practice.
+- Researched in-place upgrades:
+  - Allows OS upgrade without wiping data or roles.
+  - Avoided in most orgs due to:
+    - Risk of corruptions
+    - Compatibility issues
+- Clean installs are preferred for stability and control.
+
+---
+
+### Lab 4: Azure Extended Network (Theory)
+- No Azure account, so no hands-on for this lab.
+- Researched:
+  - **Azure Extended Network**: lets on-prem VMs keep their IPs when migrated to Azure.
+  - Configuration options:
+    - On-prem subnet extension
+    - Firewall setup for asymmetric routing
+    - Hybrid deployments
+- Learned deployment, management, and troubleshooting concepts from reading.
+
+---
+
+##    Questions I Had
+- Why is Server Core the preferred choice in some enterprise environments?
+- When is an in-place upgrade acceptable in a production setting?
+- How do orgs properly test in-place upgrades before going live?
+
+---
+
+## 🔁 What I Need to Try Next
+- Retry Server Core install to resolve crash issue if it happens again.
+- Attempt an in-place upgrade from Windows Server 2016 or 2019 to 2022.
+- Set up a free Azure account to practice hybrid network extension labs.
+
+---
+
+## 🛡️ Real-World Relevance
+These labs simulate basic tasks a Windows Admin or IAM-focused professional may perform:
+- Deploying and configuring servers for Active Directory or DNS/DHCP roles.
+- Choosing between GUI and non-GUI installs for security and performance.
+- Understanding hybrid networking strategies used in cloud IAM setups.

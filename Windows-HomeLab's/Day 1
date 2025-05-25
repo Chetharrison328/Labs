@@ -60,14 +60,14 @@
 
 ---
 
-## 🔁 What I Need to Try Next
+##   What I Need to Try Next
 - Retry Server Core install to resolve crash issue if it happens again.
 - Attempt an in-place upgrade from Windows Server 2016 or 2019 to 2022.
 - Set up a free Azure account to practice hybrid network extension labs.
 
 ---
 
-## 🛡️ Real-World Relevance
+##    Real-World Relevance
 These labs simulate basic tasks a Windows Admin or IAM-focused professional may perform:
 - Deploying and configuring servers for Active Directory or DNS/DHCP roles.
 - Choosing between GUI and non-GUI installs for security and performance.

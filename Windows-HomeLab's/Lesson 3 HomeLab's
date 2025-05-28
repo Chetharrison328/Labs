@@ -1,0 +1,55 @@
+#   Lesson 3: Homelab #2 – Creating & Managing Organizational Units (OUs)
+
+## 1. What I Learned
+
+- How to create Organizational Units (OUs) in Active Directory Users and Computers (ADUC).
+- The difference between **containers** and **OUs** — GPOs can only be applied to OUs.
+- Importance of grouping objects logically (e.g., by department) to streamline permissions and Group Policy.
+- How to move users into appropriate OUs for better access management and delegation.
+- Understood why at least **two domain controllers** are recommended for availability.
+
+## 2. Questions I Had
+
+- How do I correctly set a static IP address before promoting the server to a domain controller?
+- What steps did I miss that caused me to struggle with assigning permissions to newly created users?
+- What’s the best naming convention for OUs in an enterprise-level environment?
+
+## 3. How Things Connected
+
+- The OU structure is directly tied to **delegation of control** and **GPO targeting**, which I learned more about in Lesson 4.
+- This homelab reflected what I do at work physically — managing access and organizing identity — but now on the IT/virtual side.
+- Realized how default containers (like "Users") are less flexible since GPOs can’t be applied to them — so OUs are essential.
+
+## 4. What I Needed to Try Next
+
+- Practice assigning **delegated permissions** on the OUs using the **Delegation of Control Wizard**.
+- Try setting up a **nested OU** (e.g., IT → Helpdesk) and moving users between levels.
+- Fix the initial AD DS misconfiguration by learning:
+  - How to properly assign static IP addresses via Network Adapter settings.
+  - How to properly create a new forest/domain during the `AD DS` role configuration.
+
+## 5. Real-World Application / Use Case
+
+- In a real enterprise, OUs allow large organizations to manage users and devices by department or location.
+- Admins use OUs to assign different GPOs to HR vs IT vs Contractors — just like I set up in this lab.
+- This is the foundation for **Identity & Access Management (IAM)** in Microsoft environments — perfect for the career path I'm pursuing.
+
+---
+
+###   Troubleshooting I Encountered
+
+- Forgot to set a static IP on the VM before promoting to a domain controller.
+- Had to manually assign IP → then re-add the AD DS role and configure the domain properly.
+- Forgot some of the initial domain setup steps (e.g., creating the forest, making sure admin account had correct privileges).
+
+---
+
+✅ **OUs Created:**
+- IT
+- HR
+- Contractors
+
+👥 **Users Created & Assigned to OUs:**
+- testuser1 → IT
+- testuser2 → HR
+- testuser3 → Contractors

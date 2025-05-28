@@ -1,0 +1,42 @@
+##  Lesson 4 – Homelab #3: Creating and Linking GPOs
+
+---
+
+### 1. What I Learned
+
+- I created a Group Policy Object named `HR_PasswordPolicy`.
+- I used **Computer Configuration** → **Windows Settings** → **Security Settings** → **Account Policies** → **Password Policy** to edit the GPO.
+- I learned how to link a GPO to a specific Organizational Unit (OU).
+- I used `gpupdate /force` to apply the GPO and `gpresult /r` to verify it was working.
+
+---
+
+### 2. Questions I Had
+
+- I wasn’t sure if I was clicking the right sections under "Computer Configuration" at first — the layout was a little confusing.
+- Do all GPOs need to be enforced to work reliably, or is linking usually enough?
+
+---
+
+### 3. How Things Connected
+
+- This lab reinforced the GPO structure I studied in Lesson 4 — local, site, domain, and OU-level GPOs.
+- It also gave me practical experience using **GPMC**, which ties into access and privilege management from Lesson 5.
+- Running `gpresult /r` reminded me of using command-line tools to validate system state, just like I practiced in Lesson 1 with `ipconfig`.
+
+---
+
+### 4. What I Need to Try Next
+
+- Go back and try from the lab to test:
+  - **Blocking inheritance** on an OU
+  - **Enforcing** a GPO from the domain level
+- Try creating another GPO for a different OU (like `IT`) using **User Configuration** instead.
+
+---
+
+### 5. Real-World Application / Use Case
+
+- In a real organization, this is exactly how an IT team would push security policies across departments — like password length or expiration rules for HR employees.
+- Understanding how to link and verify GPOs is a foundational skill for Windows Server admins and IAM professionals.
+- This same knowledge would be used in roles managing access controls, workstation security, or compliance enforcement.

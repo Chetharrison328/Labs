@@ -1,0 +1,46 @@
+#   Lesson 5 – Homelab #5: Delegation, RSAT Tools, and PowerShell
+
+##   What I Learned
+
+### Part 1: Delegated Password Reset
+- Successfully delegated password reset permissions to the `TechSupport1` user.
+- Confirmed that the user was able to reset passwords for other users within the allowed OU.
+
+### Part 2: RSAT Tool Usage
+- **Group Policy Management**: Used to create and edit GPOs.
+- **ADSI Edit**: Used to access low-level AD object properties and manage AD schema.
+- **DNS Manager**: Used to view domain name and IP address mappings.
+
+### Part 3: PowerShell Exploration
+- Checked AD user info (initial issue caused by typo in username).
+- Viewed Event Logs using `Get-EventLog`.
+- Ran `Test-Connection` to verify network connectivity (received 4 successful responses).
+- Used `Get-Service` to see running services.
+- Used `Get-Help`, but needed to run `Update-Help` first to access full documentation.
+
+---
+
+##   Questions I Had
+- Why wasn’t my user showing up initially in ADUC? (Turns out I typed the name slightly wrong.)
+- Do user property configurations in ADUC impact delegation success?
+
+---
+
+##   How Things Connected
+- This lab tied back to the **least privilege** concept from Lesson 5.
+- Showed how RSAT tools and PowerShell support remote and flexible AD management.
+- Reinforced the relationship between GUI tools and command-line tools in enterprise environments.
+
+---
+
+##   What I Needed to Try Next
+- Practice writing PowerShell scripts for AD user tasks.
+- Explore more advanced GPO settings and how they impact user access.
+- Revisit user object properties in ADUC for deeper customization.
+
+---
+
+##   Real-World Application / Use Case
+- Use delegation to allow help desk users limited admin privileges for password resets.
+- RSAT enables IT admins to manage domain services remotely and securely.
+- PowerShell is critical for automation, bulk operations, and advanced diagnostics in a real network.
